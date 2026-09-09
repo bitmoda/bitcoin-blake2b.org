@@ -8,17 +8,17 @@
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="theme-color" content="#f7931a">
-    <link rel="canonical" href="https://btc-blake2b.org/developers">
+    <link rel="canonical" href="https://bitcoin-blake2b.org/developers">
     <meta property="og:title" content="Bitcoin for developers">
     <meta property="og:description" content="Consensus, node, and integration notes for the BLAKE2b proof-of-work hardfork inspired by BIP-110.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Bitcoin">
-    <meta property="og:url" content="https://btc-blake2b.org/developers">
-    <meta property="og:image" content="https://btc-blake2b.org/media/og-image.png?v=2">
+    <meta property="og:url" content="https://bitcoin-blake2b.org/developers">
+    <meta property="og:image" content="https://bitcoin-blake2b.org/media/og-image.png?v=2">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bitcoin for developers">
     <meta name="twitter:description" content="Consensus, node, and integration notes for the BLAKE2b proof-of-work hardfork inspired by BIP-110.">
-    <meta name="twitter:image" content="https://btc-blake2b.org/media/og-image.png?v=2">
+    <meta name="twitter:image" content="https://bitcoin-blake2b.org/media/og-image.png?v=2">
     <link rel="icon" href="/media/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/static/style.css?v=8">
 </head>
@@ -68,7 +68,7 @@
         </header>
         <article class="wrap prose">
 
-            <p>This hardfork is not BIP-110. BIP-110, in alignment with the vast majority of node policy, was a softfork, later rejected, that would have rejected use of the network for arbitrary data storage. A hardfork is a break away from abuse of the Bitcoin network. This hardfork changed proof of work from SHA256d to BLAKE2b, a different algorithm, so today's SHA256d miners cannot produce valid blocks here. The first BLAKE2b block is 961640 (30 August 2026).</p>
+            <p>This hardfork is not BIP-110. BIP-110, in alignment with the vast majority of node policy, was a softfork, later rejected, that would have rejected use of the network for arbitrary data storage. This hardfork was a denial of abuse of the Bitcoin network, and changed proof of work from SHA256d to BLAKE2b, a different algorithm, so today's SHA256d miners cannot produce valid blocks here. The first BLAKE2b block is 961640 (30 August 2026).</p>
             <p>Limits on arbitrary data storage began at height 961640 as a flag day, together with BLAKE2b, not on August 8 and not as a leftover versionbits vote. They apply to v2-header blocks until the previous block's median time past reaches 1 September 2027, 00:00 UTC. During that window, blocks are also limited to 800,000 weight units, about 300 kB serialized. Inputs that spend coins created before the fork are exempt from the new script and data rules.</p>
             <p>Each BLAKE2b block uses a 164-byte header v2, not the classic 80-byte SHA256d header. Light-client protocols that hash an 80-byte header with SHA256d will not validate this chain until they learn the new format and BLAKE2b.</p>
             <h2>Integration checklist</h2>
@@ -127,7 +127,7 @@
                     </ul>
                 </div>
             </div>
-            <p class="footer-note">© Bitcoin Project from 2009 to 2026. bitcoin-blake2b.org, btc-blake2b.org, btc-blake2b.com, and bitcoin-blake2b.be serve the same site.</p>
+            <p class="footer-note">© Bitcoin Project from 2009 to 2026. bitcoin-blake2b.org is the canonical site. btc-blake2b.org, btc-blake2b.com, and bitcoin-blake2b.be redirect or serve the same pages.</p>
         </div>
     </footer>
     <script src="/static/site.js?v=4"></script>
